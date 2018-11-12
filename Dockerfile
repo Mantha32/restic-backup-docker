@@ -13,6 +13,9 @@ RUN bzip2 -d restic_${RESTIC_VERSION}_linux_amd64.bz2 && mv restic_${RESTIC_VERS
 
 RUN mkdir -p /mnt/restic /var/spool/cron/crontabs /var/log
 
+#Backblaze account
+ENV B2_ACCOUNT_ID=""
+ENV B2_ACCOUNT_KEY=""
 ENV RESTIC_REPOSITORY=/mnt/restic
 ENV RESTIC_PASSWORD=""
 ENV RESTIC_TAG=""
@@ -25,7 +28,11 @@ ENV RESTIC_JOB_ARGS=""
 # /data is the dir where you have to put the data to be backed up
 VOLUME /data
 
+COPY b2_passwd.txt /etc/restic/
+COPY b2_env.sh /etc/restic/
 COPY backup.sh /bin/backup
+COPY restore.sh /bin/restore
+
 COPY entry.sh /entry.sh
 
 RUN touch /var/log/cron.log

@@ -80,6 +80,14 @@ The container is setup by setting [environment variables](https://docs.docker.co
 
 * `/data` - This is the data that gets backed up. Just [mount](https://docs.docker.com/engine/reference/run/#volume-shared-filesystems) it to wherever you want.
 
+## restore 
+
+
+```
+./restoring.sh 9a83a611
+```
+
+
 ## Set the hostname
 
 Since restic saves the hostname with each snapshot and the hostname of a docker container is it's id you might want to customize this by setting the hostname of the container to another value.
