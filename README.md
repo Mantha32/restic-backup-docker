@@ -91,6 +91,7 @@ The container is setup by setting [environment variables](https://docs.docker.co
 
 ## restore 
 
+Run the restoring.sh with the snapshot ID 
 
 ```
 ./restoring.sh 9a83a611
