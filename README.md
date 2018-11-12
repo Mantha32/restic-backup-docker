@@ -53,7 +53,15 @@ This will run the container `backup-test` with the name  `backup-test`. Existing
 
 The container will backup `~/test-data` to a repository with password `test` at `~/test-repo` every minute. The repository is initialized automatically by the container.
 
-To enter your container execute
+## restore 
+
+Run the restoring.sh with the snapshot ID 
+
+```
+./restoring.sh 9a83a611
+```
+
+## To enter your container execute
 
 ```
 docker exec -ti backup-test /bin/sh
@@ -89,13 +97,7 @@ The container is setup by setting [environment variables](https://docs.docker.co
 
 * `/data` - This is the data that gets backed up. Just [mount](https://docs.docker.com/engine/reference/run/#volume-shared-filesystems) it to wherever you want.
 
-## restore 
 
-Run the restoring.sh with the snapshot ID 
-
-```
-./restoring.sh 9a83a611
-```
 
 
 ## Set the hostname
