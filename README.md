@@ -29,6 +29,15 @@ Clone this repository
 git clone https://github.com/Lobaro/restic-backup-docker.git
 cd restic-backup-docker
 ```
+Make your B2 credential on this file: b2-account-id, b2-account-key and the bucket name. 
+```
+b2_env.sh
+```
+
+Make your B2 password on this file 
+```
+b2_passwd.sh
+```
 
 Build the container. The container is named `backup-test`
 ```
