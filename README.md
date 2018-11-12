@@ -53,19 +53,27 @@ This will run the container `backup-test` with the name  `backup-test`. Existing
 
 The container will backup `~/test-data` to a repository with password `test` at `~/test-repo` every minute. The repository is initialized automatically by the container.
 
-## restore 
-
-Run the restoring.sh with the snapshot ID 
-
-```
-./restoring.sh 9a83a611
-```
-
 ## To enter your container execute
 
 ```
 docker exec -ti backup-test /bin/sh
 ```
+
+### backup
+Do the backup manually. Otherwise the backup run each time that define in the run.sh script
+```
+backup
+```
+
+### restore 
+
+Run the restoring.sh with the snapshot ID 
+
+```
+restore 9a83a611
+```
+
+
 
 Now you can use restic [as documented](https://restic.readthedocs.io/en/stable/Manual/), e.g. try to run `restic snapshots` to list all your snapshots.
 
