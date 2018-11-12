@@ -26,7 +26,7 @@ Please don't hesitate to report any issue you find. **Thanks.**
 Clone this repository
 
 ```
-git clone https://github.com/Lobaro/restic-backup-docker.git
+git clone https://github.com/Mantha32/restic-backup-docker.git
 cd restic-backup-docker
 ```
 Make your B2 credential on this file: b2-account-id, b2-account-key and the bucket name. 
@@ -65,17 +65,17 @@ Do the backup manually. Otherwise the backup run each time that define in the ru
 backup
 ```
 
+
+
+Now you can use restic [as documented](https://restic.readthedocs.io/en/stable/Manual/), e.g. try to run `restic snapshots` to list all your snapshots.
+
 ### restore 
 
-Run the restoring.sh with the snapshot ID 
+Run the restore command with the snapshot ID. 
 
 ```
 restore 9a83a611
 ```
-
-
-
-Now you can use restic [as documented](https://restic.readthedocs.io/en/stable/Manual/), e.g. try to run `restic snapshots` to list all your snapshots.
 
 ## Logfiles
 Logfiles are inside the container. If needed you can create volumes for them.
